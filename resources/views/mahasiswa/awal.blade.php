@@ -12,6 +12,7 @@
 				<th>No.</th>
 				<th>Nama Mahasiswa</th>
 				<th>NIM</th>
+				<th>Username</th>
 				<th>Aksi</th>
 			</tr>
 		</thead>
@@ -23,6 +24,7 @@
 				
 				<td>{{ $mahasiswa->nama or 'Nama Kosong' }}</td>
 				<td>{{ $mahasiswa->nim or 'NIM Kosong' }}</td>
+				<td>{{ $mahasiswa->pengguna->username or 'Username Kosong' }}</td>
 				<td>
 					<div class="btn-group" role="group">
 						<a href="{{url('mahasiswa/edit/'.$mahasiswa->id)}}" class="btn btn-warning btn-xs" data-toogle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a>

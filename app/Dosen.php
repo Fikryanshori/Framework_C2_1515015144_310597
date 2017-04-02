@@ -9,15 +9,15 @@ class Dosen extends Model
     //
     protected $table = 'dosen';
     protected $fillable = ['nama','nip','alamat','pengguna_id'];
+    protected $guarded = ['id'];
 
-    public function Pengguna()
+    public function pengguna()
     {
     	return $this->belongsTo(Pengguna::class);
     }
     public function getUsernameAttribute(){
         return $this->pengguna->username;
     }
-
 
     public function dosen_matakuliah()
     {

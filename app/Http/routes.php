@@ -147,7 +147,7 @@ Route::get('ruangan/hapus/{ruangan}', 'RuanganController@hapus');
 
 //------------------------------------------------------------------
 
-Route::get('mahasiswa/lihat{mahasiswa}', 'MahasiswaController@lihat');
+Route::get('mahasiswa/lihat/{mahasiswa}', 'MahasiswaController@lihat');
 Route::post('mahasiswa/simpan', 'MahasiswaController@simpan');
 Route::get('mahasiswa/edit/{mahasiswa}', 'MahasiswaController@edit');
 Route::post('mahasiswa/edit/{mahasiswa}', 'MahasiswaController@update');
@@ -155,7 +155,7 @@ Route::get('mahasiswa/hapus/{mahasiswa}', 'MahasiswaController@hapus');
 
 //------------------------------------------------------------------
 
-Route::get('dosen/lihat{dosen}', 'DosenController@lihat');
+Route::get('dosen/lihat/{dosen}', 'DosenController@lihat');
 Route::post('dosen/simpan', 'DosenController@simpan');
 Route::get('dosen/edit/{dosen}', 'DosenController@edit');
 Route::post('dosen/edit/{dosen}', 'DosenController@update');
@@ -163,7 +163,7 @@ Route::get('dosen/hapus/{dosen}', 'DosenController@hapus');
 
 //------------------------------------------------------------------
 
-Route::get('dosen_matakuliah/lihat{dosen_matakuliah}', 'Dosen_matakuliahController@lihat');
+Route::get('dosen_matakuliah/lihat/{dosen_matakuliah}', 'Dosen_matakuliahController@lihat');
 Route::post('dosen_matakuliah/simpan', 'Dosen_matakuliahController@simpan');
 Route::get('dosen_matakuliah/edit/{dosen_matakuliah}', 'Dosen_matakuliahController@edit');
 Route::post('dosen_matakuliah/edit/{dosen_matakuliah}', 'Dosen_matakuliahController@update');

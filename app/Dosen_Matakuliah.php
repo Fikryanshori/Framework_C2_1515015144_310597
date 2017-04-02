@@ -9,12 +9,13 @@ class Dosen_Matakuliah extends Model
     //
    	protected $table = 'dosen_matakuliah';
     protected $fillable = ['dosen_id','matakuliah_id'];
+    protected $guarded = ['id'];
 
-    public function Dosen()
+    public function mosen()
     {
         return $this->belongsTo(Dosen::class);
     }
-    public function Matakuliah()
+    public function matakuliah()
     {
         return $this->belongsTo(Matakuliah::class);
     }
@@ -28,7 +29,7 @@ class Dosen_Matakuliah extends Model
         return $this->matakuliah->title;
     }
 
-    public function Jadwal_Matakuliah()
+    public function jadwal_matakuliah()
     {
         return $this->hasMany(Jadwal_Matakuliah::class);
     }

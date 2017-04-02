@@ -8,6 +8,7 @@ class Pengguna extends Model
 {
     protected $table = 'pengguna';
     protected $fillable = ['username','password'];
+    protected $guarded = ['id'];
     
     public function dosen()
     {

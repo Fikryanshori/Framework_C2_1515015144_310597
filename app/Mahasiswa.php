@@ -8,8 +8,9 @@ class Mahasiswa extends Model
 {
     protected $table = 'mahasiswa';
     protected $fillable = ['nama','nim','alamat','pengguna_id'];
+    protected $guarded = ['id'];
 
-    public function Pengguna()
+    public function pengguna()
     {
     	return $this->belongsTo(Pengguna::class);
     }
