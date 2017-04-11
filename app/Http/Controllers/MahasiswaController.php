@@ -84,6 +84,7 @@ class MahasiswaController extends Controller
     public function update($id, Request $input)
     {
         $mahasiswa = Mahasiswa::find($id);
+        $pengguna = $mahasiswa->pengguna;
         $mahasiswa->nama = $input->nama;
         $mahasiswa->nim = $input->nim;
         $mahasiswa->alamat = $input->alamat;
@@ -94,7 +95,7 @@ class MahasiswaController extends Controller
                 if($pengguna->save()) $this->informasi = 'Berhasil simpan data';
         }
         else{
-            $this->informasi = 'Berhasil simpan data';
+            $this->informasi = 'Gagal Simpan Data';
         }
         // $informasi = $mahasiswa->save() ? 'Berhasil update data': 'Gagal update data';
         return redirect ('mahasiswa') -> with (['informasi'=>$this->informasi]);
@@ -105,7 +106,7 @@ class MahasiswaController extends Controller
         if($mahasiswa->pengguna()->delete()){
             if($mahasiswa->delete()) $this->informasi = 'Berhasil hapus data';
         }
-        // $informasi = $mahasiswa->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
+        $informasi = $mahasiswa->delete() ? 'Berhasil hapus data' : 'Gagal hapus data';
         return redirect('mahasiswa')-> with(['informasi'=>$this->informasi]);
     }
 }

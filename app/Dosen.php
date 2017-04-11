@@ -19,11 +19,11 @@ class Dosen extends Model
         return $this->pengguna->username;
     }
 
-    public function dosen_matakuliah()
+    public function Dosen_Matakuliah()
     {
     	return $this->hasMany(Dosen_Matakuliah::class);
     }
-    public function listDosenDanNim(){
+    public function listDosenDanNip(){
         $out = [];
         foreach ($this->all() as $dsn) {
             $out[$dsn->id] = "{$dsn->nama} ({$dsn->nip})";

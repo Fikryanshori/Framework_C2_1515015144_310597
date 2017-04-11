@@ -26,7 +26,7 @@ class Jadwal_MatakuliahController extends Controller
         $ruangan = new Ruangan;
         $dosen_matakuliah = new Dosen_Matakuliah;
         return view('jadwal_matakuliah.tambah',compact('mahasiswa','ruangan','dosen_matakuliah'));
-        // return $this->simpan();
+        return $this->simpan();
     }
 
     public function simpan(Request $input)

@@ -43,6 +43,10 @@ class Jadwal_Matakuliah extends Model
         return $this->ruangan->title;
     }
 
+    public function listDosenDanMatakuliah(){
+        
+    }
+
     // public function listDosenMatakuliahDanMahasiswaDanRuangan()
     // {
     // 	$out = [];

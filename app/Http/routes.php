@@ -164,7 +164,7 @@ Route::get('dosen/hapus/{dosen}', 'DosenController@hapus');
 //------------------------------------------------------------------
 
 Route::get('dosen_matakuliah/lihat/{dosen_matakuliah}', 'Dosen_matakuliahController@lihat');
-Route::post('dosen_matakuliah/simpan', 'Dosen_matakuliahController@simpan');
+Route::post('dosen_matakuliah/simpan', 'Dosen_matakuliahController@tambah');
 Route::get('dosen_matakuliah/edit/{dosen_matakuliah}', 'Dosen_matakuliahController@edit');
 Route::post('dosen_matakuliah/edit/{dosen_matakuliah}', 'Dosen_matakuliahController@update');
 Route::get('dosen_matakuliah/hapus/{dosen_matakuliah}', 'Dosen_matakuliahController@hapus');
