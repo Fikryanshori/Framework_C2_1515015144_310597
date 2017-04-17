@@ -69,6 +69,31 @@ Route::get('/', function () {
     return view ('master');
 });
 
+Route::get('/',function()
+{
+	return \App\Dosen_Matakuliah::whereHas('dosen',function($query)
+	{
+		$query->where('nama','like','%s%');
+	})->with('dosen')->groupBy('dosen_id')->get();
+});
+Route::get('/',function()
+{
+	return \App\Dosen_Matakuliah::whereHas('dosen',function($query)
+	{
+		$query->where('nama','like','%s%');
+	})
+	->orWhereHas('matakuliah', function ($kueri)
+	{
+		$kueri->where('title','like','%a%');		
+	})
+	->with('dosen','matakuliah')
+	->groupBy('dosen_id')
+	->get();
+});
+
+Route::get('ujiDoesntHave','RelationshipRebornController@ujiDoesntHave');
+Route::get('ujiHas','RelationshipRebornController@ujiHas');
+
 // -------------------------------------------
 
 Route::get('/pengguna', 'PenggunaController@awal');

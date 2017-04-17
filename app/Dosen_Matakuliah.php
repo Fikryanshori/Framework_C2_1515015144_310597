@@ -11,7 +11,7 @@ class Dosen_Matakuliah extends Model
     protected $fillable = ['dosen_id','matakuliah_id'];
     protected $guarded = ['id'];
 
-    public function mosen()
+    public function dosen()
     {
         return $this->belongsTo(Dosen::class);
     }

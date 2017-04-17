@@ -29,7 +29,7 @@ class Dosen_MatakuliahController extends Controller
     }
     public function simpan(Request $input)
     {
-        $dosen_matakuliah = new Dosen_Matakuliah($input->only('dosen_id','matakuliah_id'));
+        $dosen_matakuliah = new Dosen_Matakuliah($input->only('dosen','matakuliah'));
             if($dosen_matakuliah->save()) $this->informasi = "Jadwal Dosen Mengajar berhasil disimpan";
             return redirect('dosen_matakuliah.awal')->with(['informasi'=>$this->informasi]);
 
